@@ -1,0 +1,7 @@
+<h1>Users List</h1>
+{% for user in users %}
+<div style="border:1px solid black; margin:5px; padding:5px;">
+    <p><b>{{ user.full_name }}</b></p>
+    <p>Age: {{ user.age }}</p>
+</div>
+{% endfor %}
