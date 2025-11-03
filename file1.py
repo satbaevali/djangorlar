@@ -7,10 +7,15 @@ def fibonacci(n):
     for _ in range(n):
         result.append(a)
         a, b = b, a + b
+    total = sum(result)
+    print("Total Fibonacci sum:", total)
     return result
 
 def factorial(n):
-    return math.prod(range(1, n + 1))
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
 
 def is_prime(n):
     if n < 2:
@@ -21,21 +26,10 @@ def is_prime(n):
     return True
 
 def primes_up_to(limit):
-    return [x for x in range(2, limit + 1) if is_prime(x)]
+    primes = []
+    for x in range(2, limit + 1):
+        if is_prime(x):
+            primes.append(x)
+    return primes
 
-def random_math_demo():
-    nums = [random.randint(1, 20) for _ in range(10)]
-    squares = [x**2 for x in nums]
-    roots = [round(math.sqrt(x), 2) for x in nums]
-    print("Numbers:", nums)
-    print("Squares:", squares)
-    print("Roots:", roots)
-
-def main():
-    print("Fibonacci:", fibonacci(10))
-    print("Factorial of 6:", factorial(6))
-    print("Primes up to 50:", primes_up_to(50))
-    random_math_demo()
-
-if __name__ == "__main__":
-    main()
+def random_math_

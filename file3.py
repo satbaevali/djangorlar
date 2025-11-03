@@ -6,9 +6,9 @@ class Note:
         self.content = content
 
     def display(self):
-        print(f"Title: {self.title}")
-        print(f"Content:\n{self.content}")
-        print("-" * 30)
+        print(f"[{self.title.upper()}]")
+        print(self.content)
+        print("-" * 35)
 
 class NotesManager:
     def __init__(self, filename="notes.txt"):
@@ -30,16 +30,19 @@ class NotesManager:
                 notes.append(Note(title, content))
         return notes
 
+    def delete_all(self):
+        open(self.filename, "w").close()
+        print("All notes deleted!")
+
 def demo_notes():
     manager = NotesManager()
-    note1 = Note("Todo", "Finish Git practice today")
-    note2 = Note("Idea", "Build a Django app with user login")
-    manager.save(note1)
-    manager.save(note2)
-    print("Saved notes.")
-    print("\nLoaded notes:")
+    manager.save(Note("Task", "Complete duplicate-4 branch"))
+    manager.save(Note("Reminder", "Push changes to GitHub"))
+    print("Duplicate-4 notes demo:")
+    print("\nAll notes:")
     for note in manager.load_all():
         note.display()
+    manager.delete_all()
 
 if __name__ == "__main__":
     demo_notes()

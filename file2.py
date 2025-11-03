@@ -15,6 +15,11 @@ def word_frequency(text):
         freq[word] = freq.get(word, 0) + 1
     return freq
 
+def replace_vowels(s, char="*"):
+    for v in "aeiouAEIOU":
+        s = s.replace(v, char)
+    return s
+
 def print_table(data):
     print("-" * 40)
     for key, value in data.items():
@@ -22,11 +27,12 @@ def print_table(data):
     print("-" * 40)
 
 def text_demo():
-    text = "Madam Arora teaches malayalam and reads level civic stats"
-    print("Text:", text)
+    text = "Python programming is super fun and easy to learn"
+    print("Duplicate-4 text demo:")
+    print("Original text:", text)
     print("Vowel count:", count_vowels(text))
-    print("Reversed words:", reverse_words(text))
-    print("Is palindrome:", is_palindrome(text))
+    print("Replaced vowels:", replace_vowels(text))
+    print("Reversed:", reverse_words(text))
     print("Word frequencies:")
     print_table(word_frequency(text))
 
