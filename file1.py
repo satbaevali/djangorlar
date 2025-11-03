@@ -1,16 +1,21 @@
 import math
 import random
+import time
 
 def fibonacci(n):
+    start = time.time()
     a, b = 0, 1
     result = []
     for _ in range(n):
         result.append(a)
         a, b = b, a + b
+    print("Execution time:", round(time.time() - start, 6), "s")
     return result
 
 def factorial(n):
-    return math.prod(range(1, n + 1))
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
 
 def is_prime(n):
     if n < 2:
@@ -21,20 +26,22 @@ def is_prime(n):
     return True
 
 def primes_up_to(limit):
-    return [x for x in range(2, limit + 1) if is_prime(x)]
+    primes = []
+    for x in range(2, limit + 1):
+        if is_prime(x):
+            primes.append(x)
+    return primes
 
 def random_math_demo():
-    nums = [random.randint(1, 20) for _ in range(10)]
-    squares = [x**2 for x in nums]
-    roots = [round(math.sqrt(x), 2) for x in nums]
-    print("Numbers:", nums)
-    print("Squares:", squares)
-    print("Roots:", roots)
+    nums = [random.randint(1, 30) for _ in range(8)]
+    print("Duplicate-2 numbers:", nums)
+    print("Average:", round(sum(nums) / len(nums), 2))
 
 def main():
-    print("Fibonacci:", fibonacci(10))
-    print("Factorial of 6:", factorial(6))
-    print("Primes up to 50:", primes_up_to(50))
+    print("Version: duplicate-2")
+    print("Fibonacci:", fibonacci(12))
+    print("Factorial of 5:", factorial(5))
+    print("Primes up to 30:", primes_up_to(30))
     random_math_demo()
 
 if __name__ == "__main__":
