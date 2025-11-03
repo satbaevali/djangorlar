@@ -40,6 +40,7 @@ def simulate_battle(player1, player2):
 
     winner = player1 if player1.is_alive() else player2
     print(f"\n🏆 Winner: {winner.name}")
+
     print(f"\n🏆 Winner: {winner.name} — version 2 balance patch")
 
 if __name__ == "__main__":

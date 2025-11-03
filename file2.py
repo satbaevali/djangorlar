@@ -38,8 +38,11 @@ def text_summary(text):
     print("Character Count:", char_count(text))
     print("Most Common Word:", most_common_word(text))
     print("Unique Words:", len(unique_words(text)))
+
     print("Word Count (v2):", word_count(text))
     print("Text utils v2 — frequency mode enabled")
+
+
 
 if __name__ == "__main__":
     sample_text = "Hello world! This is a text utility example. Hello again!"

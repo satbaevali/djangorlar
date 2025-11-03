@@ -45,8 +45,9 @@ def random_operations():
     print("Median:", median(nums))
     print("Variance:", variance(nums))
     print("Primes:", prime_numbers(50))
-    print("Numbers (v2):", nums)
-    print("Running version B — duplicate 2, optimized loops")
+
+    print("Numbers (v1):", nums)
+    print("Running version A — duplicate 1, math enhanced")
 
 if __name__ == "__main__":
     random_operations()
