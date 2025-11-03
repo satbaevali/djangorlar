@@ -45,6 +45,8 @@ def random_operations():
     print("Median:", median(nums))
     print("Variance:", variance(nums))
     print("Primes:", prime_numbers(50))
+    print("Numbers (v3):", nums)
+    print("Running version C — duplicate 3, debug mode active")
 
     print("Numbers (v1):", nums)
     print("Running version A — duplicate 1, math enhanced")

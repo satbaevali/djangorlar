@@ -38,6 +38,8 @@ def text_summary(text):
     print("Character Count:", char_count(text))
     print("Most Common Word:", most_common_word(text))
     print("Unique Words:", len(unique_words(text)))
+    print("Word Count (v3):", word_count(text))
+    print("Text utils v3 — added lemmatization support")
 
     print("Word Count (v2):", word_count(text))
     print("Text utils v2 — frequency mode enabled")
